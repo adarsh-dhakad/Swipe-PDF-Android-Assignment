@@ -2,7 +2,9 @@
  
 ## screenshot of Application 
 
-home screen
+# home screen 
+![WhatsApp Image 2022-08-28 at 11 33 21 PM]()
+<img width="200" alt="image" src="[https://user-images.githubusercontent.com/58937745/187088195-5e55277b-dffe-4484-862b-8af596f4241a.jpeg](https://user-images.githubusercontent.com/58937745/187088308-02e191b0-3f2f-4593-ae3b-0c34ffe8661e.jpeg)">
 
 <img width="200" alt="image" src="https://user-images.githubusercontent.com/58937745/187088195-5e55277b-dffe-4484-862b-8af596f4241a.jpeg">
 
