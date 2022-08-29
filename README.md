@@ -1,5 +1,7 @@
 # Swipe PDF Android Assignment
  
+# <a href="https://drive.google.com/file/d/1H6TYugDaq7Wf5Afvi6dcvrkRLoeGa63Co/view?usp=sharing" target="_blank">click here to download apk </a> 
+
 ## screenshot of Application 
 
 # home screen 
