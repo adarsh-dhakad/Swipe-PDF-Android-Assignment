@@ -7,7 +7,9 @@
     android:padding="12dp"
     tools:context=".PdfCreateActivity">
 
-    <include layout="@layout/pdf_layout" />
+    <include
+        android:id="@+id/id_pdf_layout"
+        layout="@layout/pdf_layout" />
 
     <Button
         android:id="@+id/btn_save"
