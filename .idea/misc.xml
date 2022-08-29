@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/Users/Adarsh Dhakad/AndroidStudioProjects/PDFSwipeAssignment/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1225" />
         <entry key="..\:/Users/Adarsh Dhakad/AndroidStudioProjects/PDFSwipeAssignment/app/src/main/res/drawable/image_backgraound.xml" value="0.153" />
+        <entry key="..\:/Users/Adarsh Dhakad/AndroidStudioProjects/PDFSwipeAssignment/app/src/main/res/drawable/pdf_layout_background.xml" value="0.126" />
         <entry key="..\:/Users/Adarsh Dhakad/AndroidStudioProjects/PDFSwipeAssignment/app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Adarsh Dhakad/AndroidStudioProjects/PDFSwipeAssignment/app/src/main/res/layout/activity_pdf_create.xml" value="0.2" />
         <entry key="..\:/Users/Adarsh Dhakad/AndroidStudioProjects/PDFSwipeAssignment/app/src/main/res/layout/activity_pdf_viewer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Adarsh Dhakad/AndroidStudioProjects/PDFSwipeAssignment/app/src/main/res/layout/pdf_layout.xml" value="0.19895833333333332" />
       </map>
     </option>
   </component>

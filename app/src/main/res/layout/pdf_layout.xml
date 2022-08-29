@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pdf_layout_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <EditText
+            android:id="@+id/et_english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="12dp"
+            android:inputType="textPersonName"
+            android:text="English"
+            android:textSize="19sp"
+            android:gravity="start"
+            android:background="#00000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+          />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/et_english_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:ems="10"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="12dp"
+            android:text="We all know that health is wealth. With its intricate network of bones, muscles,
+and organs, a well-functioning human body is much like an orchestrated
+            symphony. To keep this orchestra playing well, we need physical exercise. It
+        may take the form of sports, yoga, or even regular walking. It is well-known that
+        people who engage in physical exercise stay happier and live longer. "
+            android:textSize="18sp"
+            android:inputType="textMultiLine"
+            android:gravity="top|start"
+            android:background="#00000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_english"
+            app:layout_constraintBottom_toBottomOf="@id/guideline2"/>
+        <TextView
+            android:id="@+id/et_hindi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:background="#00000000"
+            android:textSize="19sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="12dp"
+            android:inputType="textPersonName"
+            android:gravity="start"
+            android:text="हिन्दी"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline2"/>
+
+        <TextView
+            android:id="@+id/et_hindi_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:ems="10"
+            android:padding="5dp"
+            android:background="#00000000"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="12dp"
+            android:inputType="textMultiLine"
+            android:gravity="start"
+            android:textColor="@color/black"
+            android:text="हमनुष्य इस समाज में रहने वाला सामाजिक प्राणी है। समाज की प्रगति का दायित्व मनुष्य के
+व्यवहार पर निर्भर करता है। आज अराजकता के कारण ईर्ष्या और दुर्भावना की सोच है। इस
+कारण कुछ इंसान स्वभिमान और इंसानियत को भूल गए हैं। अराजकता के कई प्रकार हैं,
+जैसे भ्रष्टाचार, शोषण, अत्याचार, बेईमान, डकैती चोरी, हत्या रिश्वतखोरी इत्यादि अपराधिक
+काम हमारे समाज को खोखला कर रही है। असामाजिक तत्वों की शीघ्र पहचान करके उनके
+िलाफ कानूनी कार्रवाई की जानी चाहिए। टेलीविजन, इंटरनेट, सोशल मीडिया और
+अखबारों के माध्यम से जागरूकता पैदा करनी चाहिए। अराजक बनकर समाज दूषित करने
+वाले के मन में डर तभी होगा जागरूकता और कानून के मोर्चे पर सरकार को सशक्त कदम
+उठाना चाहिए। तब हम एक उन्नत समाज की स्थापना कर पाएंगे।"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_hindi"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

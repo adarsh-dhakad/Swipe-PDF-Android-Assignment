@@ -49,7 +49,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.idBtnGeneratePDF.setOnClickListener(View.OnClickListener { // calling method to
             // generate our PDF file.
-            generateBill()
+           // generateBill()
+            startActivity(Intent(this,PdfCreateActivity::class.java))
         })
 
         binding.btnPdfRender.setOnClickListener {
