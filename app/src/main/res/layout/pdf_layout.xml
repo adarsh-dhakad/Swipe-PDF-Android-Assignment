@@ -33,7 +33,7 @@
             app:layout_constraintTop_toTopOf="parent"
           />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/et_english_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -71,7 +71,7 @@ and organs, a well-functioning human body is much like an orchestrated
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/guideline2"/>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/et_hindi_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"

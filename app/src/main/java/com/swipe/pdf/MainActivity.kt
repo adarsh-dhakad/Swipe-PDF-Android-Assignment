@@ -3,20 +3,18 @@ package com.swipe.pdf
 import android.Manifest.permission
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Paint
+import android.graphics.Typeface
 import android.graphics.pdf.PdfDocument
 import android.graphics.pdf.PdfDocument.PageInfo
-import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.pspdfkit.configuration.activity.PdfActivityConfiguration
-import com.pspdfkit.ui.PdfActivity
 import com.swipe.pdf.databinding.ActivityMainBinding
 import java.io.File
 import java.io.FileOutputStream
@@ -68,8 +66,8 @@ class MainActivity : AppCompatActivity() {
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
                 "myBill.pdf"
             )
-            val config = PdfActivityConfiguration.Builder(this).build()
-            PdfActivity.showDocument(this, Uri.fromFile(file), config)
+//            val config = PdfActivityConfiguration.Builder(this).build()
+//            PdfActivity.showDocument(this, Uri.fromFile(file), config)
         }
 
     }
