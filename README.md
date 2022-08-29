@@ -8,6 +8,7 @@
 <img width="200" alt="image" src="https://user-images.githubusercontent.com/58937745/187088308-02e191b0-3f2f-4593-ae3b-0c34ffe8661e.jpeg">
 
 # pdf render activity
+you can zoom in and zoom out pdf 
 <img width="200" alt="image" src="https://user-images.githubusercontent.com/58937745/187088195-5e55277b-dffe-4484-862b-8af596f4241a.jpeg">
 
 # pdf render using implementation("com.pspdfkit:pspdfkit:8.4.0")
