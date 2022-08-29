@@ -8,6 +8,8 @@ import android.net.Uri
 import android.os.*
 import android.util.DisplayMetrics
 import android.util.Log
+import android.view.ViewGroup
+import android.view.ViewGroup.MarginLayoutParams
 import android.view.WindowInsets
 import android.view.WindowMetrics
 import android.widget.ImageView
@@ -107,7 +109,12 @@ class PdfViewerActivity : AppCompatActivity() {
             val renderPage = renderer.openPage(0);
             val renderPageWigth = renderPage.width
             val rendererPageHeigth = renderPage.height
-            val bitmap = Bitmap.createBitmap(reqWidth, reqHeight, Bitmap.Config.ARGB_8888)
+//            image.layoutParams = MarginLayoutParams(
+//                renderPageWigth,
+//                rendererPageHeigth
+//            )
+            ZoomInZoomOut(image)
+            val bitmap = Bitmap.createBitmap(renderPageWigth, rendererPageHeigth, Bitmap.Config.ARGB_8888)
             val m = image.imageMatrix
             //   val rect = Rect(0,0,reqWidth,reqHeight)
             //    renderer.openPage(0).render(bitmap,rect,m,PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
