@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
 
-        binding.btnPspdfkit.setOnClickListener {
+        binding.btnGkemonGenerator.setOnClickListener {
             val file = File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
                 "myBill.pdf"
@@ -71,6 +71,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
 
     private fun generateBill() {
         val pdfDocument = PdfDocument()

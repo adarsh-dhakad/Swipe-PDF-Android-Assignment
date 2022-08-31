@@ -28,11 +28,11 @@
         app:layout_constraintTop_toBottomOf="@+id/idBtnGeneratePDF" />
 
     <Button
-        android:id="@+id/btn_pspdfkit"
+        android:id="@+id/btn_gkemon_generator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:text="open with pspdfkit"
+        android:text="Gkemon:Android-XML-to-PDF-Generator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
