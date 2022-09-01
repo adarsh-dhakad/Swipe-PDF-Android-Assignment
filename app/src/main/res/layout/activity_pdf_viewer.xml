@@ -3,25 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#F47777"
     android:layout_height="match_parent"
     tools:context=".PdfViewerActivity">
-
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-    <androidx.appcompat.widget.AppCompatImageView
+    <com.github.barteksc.pdfviewer.PDFView
         android:id="@+id/pdfView"
-        android:layout_margin="12dp"
-        android:background="@drawable/image_backgraound"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:scaleType="fitStart"
-        />
-</FrameLayout>
+        android:background="#D8B7B7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+<!--<FrameLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent">-->
+<!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/pdfView"-->
+<!--        android:layout_margin="12dp"-->
+<!--        android:background="@drawable/image_backgraound"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:scaleType="fitStart"-->
+<!--        />-->
+<!--</FrameLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

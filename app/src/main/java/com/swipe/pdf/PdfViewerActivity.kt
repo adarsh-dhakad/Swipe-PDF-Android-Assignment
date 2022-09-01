@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.*
 import android.util.DisplayMetrics
 import android.util.Log
+import android.view.MotionEvent
 import android.view.ViewGroup
 import android.view.ViewGroup.MarginLayoutParams
 import android.view.WindowInsets
@@ -15,6 +16,9 @@ import android.view.WindowMetrics
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
+import com.github.barteksc.pdfviewer.listener.OnTapListener
+import com.swipe.pdf.databinding.ActivityPdfViewerBinding
 import java.io.File
 
 
@@ -28,40 +32,41 @@ class PdfViewerActivity : AppCompatActivity() {
      */
     private lateinit var mPdfRenderer: PdfRenderer
     private lateinit var file: File
+    private lateinit var binding:ActivityPdfViewerBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pdf_viewer)
+        binding = ActivityPdfViewerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-//        val intent = intent
-//        val pdfUrl = "https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf"
-//
-//        val pdfView = findViewById<ImageView>(R.id.pdfView)
-//        val file = File(Environment.getExternalStorageDirectory(), "myBill.pdf")
+        val uri:Uri?
 
-        //   RetrievePDFFromURL(pdfView).execute(pdfUrl)
-        if(intent.hasExtra("in")){
-            val uri: String? = intent.getStringExtra("in")
-            val index = uri
-            file = File("${uri}")
+        if(intent.hasExtra("data")){
+           uri = intent.getStringExtra("data")?.toUri()
             Log.d("wi233", "uri ${uri}")
         }else {
-            val uri: Uri? = intent.data
-            val index = uri.toString().indexOf("storage/emulated/0/")
-            file = File("${uri.toString().substring(index)}")
-            Log.d("wi233", "uri ${uri.toString().substring(index)}")
+            uri = intent.data
         }
-     //  Log.d("wi233", "url ${Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)}")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        val imageView = findViewById<ImageView>(R.id.pdfView)
-        imageView.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
-            //
-            if (imageView.getWidth() > 0 && imageView.getHeight() > 0) {
-                openRenderer(this)
-            }
-        }
+        Log.d("aer34 i","${uri}")
+        binding.pdfView.fromUri(uri)
+        //    .pages(0, 2, 1, 3, 3, 3) // all pages are displayed by default
+            .enableSwipe(true) // allows to block changing pages using swipe
+            .swipeHorizontal(false)
+            .enableDoubletap(true)
+            .defaultPage(0)
+            .enableAnnotationRendering(false) // render annotations (such as comments, colors or forms)
+            .password(null)
+            .scrollHandle(null)
+            .enableAntialiasing(true) // improve rendering a little bit on low-res screens
+            // spacing between pages in dp. To define spacing color, set view background
+            .spacing(0)
+            .autoSpacing(false) // add dynamic spacing to fit each page on its own on the screen
+//            .linkHandler(DefaultLinkHandler)
+//            .pageFitPolicy(FitPolicy.WIDTH) // mode to fit pages in the view
+            .fitEachPage(true) // fit each page to the view, else smaller pages are scaled relative to largest page.
+            .pageSnap(false) // snap pages to screen boundaries
+            .pageFling(false) // make a fling change only a single page like ViewPager
+            .nightMode(false) // t
+            .load()
     }
 
     var widthOfScreen = 0
@@ -98,8 +103,8 @@ class PdfViewerActivity : AppCompatActivity() {
             val reqWidth = image.width
             val reqHeight: Int = image.height
             Log.d("wi233", "${image.height} ${image.width}")
-
-            mFileDescriptor = ParcelFileDescriptor.open(file, ParcelFileDescriptor.MODE_READ_ONLY)
+            mFileDescriptor = contentResolver.openFileDescriptor(intent.data!!,"r")!!
+         //   mFileDescriptor = ParcelFileDescriptor.open(file, ParcelFileDescriptor.MODE_READ_ONLY)
             val renderer = PdfRenderer(mFileDescriptor)
 
             val pagecount = renderer.pageCount;
@@ -130,3 +135,4 @@ class PdfViewerActivity : AppCompatActivity() {
 
     }
 }
+

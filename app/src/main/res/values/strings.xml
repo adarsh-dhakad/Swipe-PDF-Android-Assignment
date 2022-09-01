@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">PDF Swipe Assignment</string>
-    <string name="we_all_know_that_health_is_wealth_with_its_intricate_network_of_bones_muscles_and_organs_a_well_functioning_human_body_is_much_like_an_orchestrated_symphony_to_keep_this_orchestra_playing_well_we_need_physical_exercise_it_may_take_the_form_of_sports_yoga_or_even_regular_walking_it_is_well_known_that_people_who_engage_in_physical_exercise_stay_happier_and_live_longer">We all know that health is wealth. With its intricate network of bones, muscles, and organs, a well-functioning human body is much like an orchestrated symphony. To keep this orchestra playing well, we need physical exercise. It may take the form of sports, yoga, or even regular walking. It is well-known that people who engage in physical exercise stay happier and live longer.</string>
+    <string name="english_text">We all know that health is wealth. With its intricate network of bones, muscles, and organs, a well-functioning human body is much like an orchestrated symphony. To keep this orchestra playing well, we need physical exercise. It may take the form of sports, yoga, or even regular walking. It is well-known that people who engage in physical exercise stay happier and live longer.</string>
     <string name="hindi">हिन्दी</string>
-    <string name="hindi_text">मनुष्य इस समाज में रहने वाला सामाजिक प्राणी है। समाज की प्रगति का दायित्व मनुष्य के व्यवहार पर निर्भर करता है। आज अराजकता के कारण ईर्ष्या और दुर्भावना की सोच है। इस कारण कुछ इंसान स्वभिमान और इंसानियत को भूल गए हैं। अराजकता के कई प्रकार हैं, जैसे भ्रष्टाचार, शोषण, अत्याचार, बेईमान, डकैती चोरी, हत्या रिश्वतखोरी इत्यादि अपराधिक काम हमारे समाज को खोखला कर रही है। असामाजिक तत्वों की शीघ्र पहचान करके उनके िलाफ कानूनी कार्रवाई की जानी चाहिए। टेलीविजन, इंटरनेट, सोशल मीडिया और अखबारों के माध्यम से जागरूकता पैदा करनी चाहिए। अराजक बनकर समाज दूषित करने वाले के मन में डर तभी होगा जागरूकता और कानून के मोर्चे पर सरकार को सशक्त कदम उठाना चाहिए। तब हम एक उन्नत समाज की स्थापना कर पाएंगे।</string>
+    <string name="hindi_text">मनुष्य इस समाज में रहने वाला सामाजिक प्राणी है। समाज की प्रगति का दायित्व मनुष्य के व्यवहार पर निर्भर करता है। आज अराजकता के कारण ईर्ष्या और दुर्भावना की सोच है।
+        इस कारण कुछ इंसान स्वभिमान और इंसानियत को भूल गए हैं। अराजकता के कई प्रकार हैं,
+        जैसे भ्रष्टाचार, शोषण, अत्याचार, बेईमान, डकैती चोरी, हत्या रिश्वतखोरी इत्यादि अपराधिक काम हमारे समाज को खोखला कर रही है। असामाजिक तत्वों की शीघ्र पहचान करके उनके खिलाफ कानूनी कार्रवाई की जानी
+        चाहिए। टेलीविजन, इंटरनेट, सोशल मीडिया और अखबारों के माध्यम से जागरूकता पैदा करनी चाहिए। अराजक बनकर समाज दूषित करने वाले के मन में डर तभी होगा जागरूकता और कानून के मोर्चे
+        पर सरकार को सशक्त कदम उठाना चाहिए। तब हम एक उन्नत समाज की स्थापना कर पाएंगे।</string>
+    <string name="english">English</string>
+    <string name="pdf_application">PDF Application</string>
+    <string name="str_attachfile_chooser_message">open pdf</string>
 </resources>

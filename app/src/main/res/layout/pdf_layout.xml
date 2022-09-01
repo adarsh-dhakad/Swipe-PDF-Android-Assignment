@@ -44,7 +44,7 @@
             android:padding="5dp"
             android:textColor="@color/black"
             android:layout_marginBottom="12dp"
-            android:text="@string/we_all_know_that_health_is_wealth_with_its_intricate_network_of_bones_muscles_and_organs_a_well_functioning_human_body_is_much_like_an_orchestrated_symphony_to_keep_this_orchestra_playing_well_we_need_physical_exercise_it_may_take_the_form_of_sports_yoga_or_even_regular_walking_it_is_well_known_that_people_who_engage_in_physical_exercise_stay_happier_and_live_longer"
+            android:text="@string/english_text"
             android:textSize="14sp"
             android:inputType="textMultiLine"
             android:gravity="top|start"

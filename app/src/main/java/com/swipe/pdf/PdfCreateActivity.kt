@@ -41,22 +41,16 @@ class PdfCreateActivity : AppCompatActivity() {
 
 
         binding.btnSave.setOnClickListener {
-            //    val inflater = LayoutInflater.from(this@PdfCreateActivity)
 
-//            val inflater: LayoutInflater =
-//                this.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-//            val view = inflater.inflate(R.layout.pdf_layout, null)
-//            val binding: PdfLayoutBinding = PdfLayoutBinding.inflate(
-//                LayoutInflater.from(this), null, false
-//            )
             lifecycleScope.launch {
                 //   savePdf(this@PdfCreateActivity.binding.idPdfLayout.root)
+              //  binding.idPdfLayout.etEnglishText.text = " this is my english"
                 generatePdfFromView(this@PdfCreateActivity.binding.idPdfLayout.root)
             }
         }
     }
 
-    fun generatePdfFromView(view: View) {
+    private fun generatePdfFromView(view: View) {
         val bitmap: Bitmap = getBitmapFromView(view)
         document = PdfDocument()
         val myPageInfo: PdfDocument.PageInfo = PdfDocument.PageInfo.Builder(
@@ -132,73 +126,73 @@ class PdfCreateActivity : AppCompatActivity() {
         return returnBitmap
     }
 
-    private suspend fun savePdf(view: View) {
-
-        //Fetch the dimensions of the viewport
-        val displayMetrics = DisplayMetrics()
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            this@PdfCreateActivity.display?.getRealMetrics(displayMetrics)
-            displayMetrics.densityDpi
-        } else {
-            this@PdfCreateActivity.windowManager.defaultDisplay.getMetrics(displayMetrics)
-        }
-        view.measure(
-            View.MeasureSpec.makeMeasureSpec(
-                displayMetrics.widthPixels, View.MeasureSpec.EXACTLY
-            ),
-            View.MeasureSpec.makeMeasureSpec(
-                displayMetrics.heightPixels, View.MeasureSpec.EXACTLY
-            )
-        )
-
-        view.layout(0, 0, displayMetrics.widthPixels, displayMetrics.heightPixels)
-
-        withContext(Dispatchers.IO) {
-
-            val bitmap = Bitmap.createBitmap(
-                view.measuredWidth,
-                view.measuredHeight,
-                Bitmap.Config.ARGB_8888
-            )
-            val canvas = Canvas(bitmap)
-            view.draw(canvas)
-
-            // 595  842
-            Bitmap.createScaledBitmap(
-                bitmap,
-                displayMetrics.widthPixels,
-                displayMetrics.heightPixels,
-                true
-            )
-
-            val pdfDocument = PdfDocument()
-            val pageInfo = PdfDocument.PageInfo.Builder(
-                displayMetrics.widthPixels,
-                displayMetrics.heightPixels,
-                1
-            ).create()
-
-            val page = pdfDocument.startPage(pageInfo)
-            page.canvas.drawBitmap(bitmap, 0F, 0F, null)
-            pdfDocument.finishPage(page)
-
-            val file = File(
-                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-                "myBill.pdf"
-            )
-            try {
-                pdfDocument.writeTo(FileOutputStream(file))
-                runOnUiThread {
-                    Toast.makeText(
-                        this@PdfCreateActivity,
-                        "PDF file generated successfully.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
-            pdfDocument.close()
-        }
-    }
+//    private suspend fun savePdf(view: View) {
+//
+//        //Fetch the dimensions of the viewport
+//        val displayMetrics = DisplayMetrics()
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//            this@PdfCreateActivity.display?.getRealMetrics(displayMetrics)
+//            displayMetrics.densityDpi
+//        } else {
+//            this@PdfCreateActivity.windowManager.defaultDisplay.getMetrics(displayMetrics)
+//        }
+//        view.measure(
+//            View.MeasureSpec.makeMeasureSpec(
+//                displayMetrics.widthPixels, View.MeasureSpec.EXACTLY
+//            ),
+//            View.MeasureSpec.makeMeasureSpec(
+//                displayMetrics.heightPixels, View.MeasureSpec.EXACTLY
+//            )
+//        )
+//
+//        view.layout(0, 0, displayMetrics.widthPixels, displayMetrics.heightPixels)
+//
+//        withContext(Dispatchers.IO) {
+//
+//            val bitmap = Bitmap.createBitmap(
+//                view.measuredWidth,
+//                view.measuredHeight,
+//                Bitmap.Config.ARGB_8888
+//            )
+//            val canvas = Canvas(bitmap)
+//            view.draw(canvas)
+//
+//            // 595  842
+//            Bitmap.createScaledBitmap(
+//                bitmap,
+//                displayMetrics.widthPixels,
+//                displayMetrics.heightPixels,
+//                true
+//            )
+//
+//            val pdfDocument = PdfDocument()
+//            val pageInfo = PdfDocument.PageInfo.Builder(
+//                displayMetrics.widthPixels,
+//                displayMetrics.heightPixels,
+//                1
+//            ).create()
+//
+//            val page = pdfDocument.startPage(pageInfo)
+//            page.canvas.drawBitmap(bitmap, 0F, 0F, null)
+//            pdfDocument.finishPage(page)
+//
+//            val file = File(
+//                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+//                "myBill.pdf"
+//            )
+//            try {
+//                pdfDocument.writeTo(FileOutputStream(file))
+//                runOnUiThread {
+//                    Toast.makeText(
+//                        this@PdfCreateActivity,
+//                        "PDF file generated successfully.",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                }
+//            } catch (e: IOException) {
+//                e.printStackTrace()
+//            }
+//            pdfDocument.close()
+//        }
+//    }
 }

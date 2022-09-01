@@ -54,4 +54,6 @@ dependencies {
     implementation 'androidx.activity:activity-ktx:1.5.1'
     // size of this dependencies  is 40 mb
 //    implementation 'com.github.Gkemon:Android-XML-to-PDF-Generator:2.6.2'
+  //   implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'com.github.mhiew:android-pdf-viewer:3.2.0-beta.3'
 }
