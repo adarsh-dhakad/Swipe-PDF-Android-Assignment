@@ -1,4 +1,4 @@
-package com.swipe.pdf
+package com.swipe.pdf.fragments
 
 import android.app.Activity
 import android.content.Intent
@@ -13,29 +13,40 @@ import android.text.Layout
 import android.text.StaticLayout
 import android.text.TextPaint
 import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.swipe.pdf.R
 import com.swipe.pdf.databinding.ActivityInputBinding
+import com.swipe.pdf.databinding.FragmentInputToPdfBinding
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
 
-class InputActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityInputBinding
+
+class InputToPdfFragment : Fragment() {
+    private lateinit var binding: FragmentInputToPdfBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityInputBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentInputToPdfBinding.inflate(inflater,container,false)
         binding.button.setOnClickListener {
             if (checkInput()) {
                 generatePdf()
             } else {
-                Toast.makeText(this, "Please Enter Some Text", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Please Enter Some Text", Toast.LENGTH_SHORT).show()
             }
         }
-
+        return binding.root
     }
 
     private lateinit var document: PdfDocument
@@ -77,7 +88,7 @@ class InputActivity : AppCompatActivity() {
 
         title.typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
         title.textSize = 30f
-        title.color = ContextCompat.getColor(this, R.color.black)
+        title.color = ContextCompat.getColor(requireContext(), R.color.black)
         title.textAlign = Paint.Align.LEFT
         margins += 20f
 
@@ -130,18 +141,18 @@ class InputActivity : AppCompatActivity() {
 
                         if (uri != null) {
                             val pfd: ParcelFileDescriptor? =
-                                contentResolver.openFileDescriptor(uri, "w")
+                                requireActivity().contentResolver.openFileDescriptor(uri, "w")
                             val fileOutputStream = FileOutputStream(pfd!!.fileDescriptor)
                             document.writeTo(fileOutputStream)
                             document.close()
 
-                            Toast.makeText(this, "pdf Saved Successfully", Toast.LENGTH_SHORT)
+                            Toast.makeText(requireContext(), "pdf Saved Successfully", Toast.LENGTH_SHORT)
                                 .show()
 
                         }
                     } catch (e: FileNotFoundException) {
                         e.printStackTrace()
-                        Toast.makeText(this, "File Not found", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "File Not found", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -150,7 +161,7 @@ class InputActivity : AppCompatActivity() {
     private fun createTextLayout(text: String, width: Int): StaticLayout {
         val textPaint = TextPaint()
         textPaint.textSize = 30f
-        textPaint.color = ContextCompat.getColor(this, R.color.black)
+        textPaint.color = ContextCompat.getColor(requireContext(), R.color.black)
         val mTextLayout: StaticLayout
         if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)) {
             val sb = StaticLayout.Builder.obtain(
@@ -201,4 +212,5 @@ class InputActivity : AppCompatActivity() {
 
         return true
     }
+
 }

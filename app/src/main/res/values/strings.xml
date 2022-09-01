@@ -10,4 +10,6 @@
     <string name="english">English</string>
     <string name="pdf_application">PDF Application</string>
     <string name="str_attachfile_chooser_message">open pdf</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
